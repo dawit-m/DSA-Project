@@ -42,11 +42,11 @@ Because this project is built with Vanilla HTML, CSS, and JS, no complex build t
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/MedCheck-Pro.git](https://github.com/YOUR_USERNAME/MedCheck-Pro.git)
+    git clone [https://github.com/dawit-m/DSA-Project.git](https://github.com/dawit-m/DSA-Project.git)
     ```
 2.  **Navigate to the directory:**
     ```bash
-    cd MedCheck-Pro
+    cd DSA-Project
     ```
 3.  **Run the app:**
     Simply double-click the `index.html` file to open it in any modern web browser (Chrome, Firefox, Safari, Edge).
