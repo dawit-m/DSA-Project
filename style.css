@@ -1,0 +1,250 @@
+/* --- MODERN CSS VARIABLES --- */
+/* Using variables makes it easy to change the app's color scheme in one place */
+:root {
+    --bg-gradient: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --primary: #4318FF;
+    --primary-hover: #3311db;
+    --text-dark: #2B3674;
+    --text-light: #A3AED0;
+    --danger: #FF5B5B;
+}
+
+/* Global Reset to ensure consistency across different web browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Center everything on the screen and apply the gradient background */
+body {
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- GLASSMORPHISM CONTAINER --- */
+/* This creates the frosted glass effect popular in modern UI design */
+.glass-container {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px); /* Blurs the background behind the container */
+    -webkit-backdrop-filter: blur(16px); /* Safari support */
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* --- HEADER STYLES --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+}
+
+.badge {
+    background: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    vertical-align: super; /* Pushes the badge slightly upward */
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.warning-banner {
+    background: rgba(255, 91, 91, 0.1);
+    color: var(--danger);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+/* --- DASHBOARD GRID LAYOUT --- */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack elements vertically on mobile */
+    gap: 30px;
+}
+
+/* Responsive design: Place cards side-by-side on larger screens */
+@media (min-width: 800px) {
+    .dashboard {
+        grid-template-columns: 1.2fr 1fr; /* Left card is slightly wider */
+    }
+}
+
+/* Standard card styling */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+}
+
+/* Small tag to highlight the DSA concept being used */
+.dsa-tag {
+    background: #F4F7FE;
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.instruction {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* --- MODERN SELECTABLE PILLS (Checkboxes) --- */
+.symptom-pills {
+    display: flex;
+    flex-wrap: wrap; /* Allows pills to wrap to the next line */
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Hide the default ugly HTML checkbox */
+.symptom-pills input[type="checkbox"] {
+    display: none;
+}
+
+/* Style the label to look like a modern, clickable button */
+.pill-label {
+    background: #F4F7FE;
+    color: var(--text-dark);
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover animation */
+    border: 2px solid transparent;
+}
+
+.pill-label:hover {
+    background: #E2E8F0;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* CSS Magic: Change the label style when the hidden checkbox is checked */
+.symptom-pills input[type="checkbox"]:checked + .pill-label {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 16px rgba(67, 24, 255, 0.3);
+}
+
+/* --- BUTTONS & INPUTS --- */
+.glow-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(67, 24, 255, 0.2);
+}
+
+.glow-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(67, 24, 255, 0.4);
+}
+
+.search-bar {
+    display: flex;
+    background: #F4F7FE;
+    border-radius: 16px;
+    padding: 5px;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 15px;
+    font-size: 1rem;
+    outline: none;
+    color: var(--text-dark);
+}
+
+.search-btn {
+    background: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+}
+
+/* --- RESULTS AREA --- */
+.result-box {
+    margin-top: 25px;
+    background: #F8FAFC;
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 5px solid var(--primary);
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: slideUp 0.4s ease; /* Fade in animation */
+}
+
+.result-box span {
+    color: var(--primary);
+}
+
+/* Utility class to easily hide elements via JavaScript */
+.hidden {
+    display: none;
+}
+
+/* Keyframe animation for the results box */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

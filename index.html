@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedCheck Pro | Educational DSA Tool</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="glass-container">
+      <header>
+        <div class="logo">
+          <span class="logo-icon">🩺</span> MedCheck
+          <span class="badge">Pro</span>
+        </div>
+        <p class="subtitle">
+          Data Structures & Algorithms: Medical Diagnosis Simulator
+        </p>
+        <div class="warning-banner">
+          ⚠️ Educational use only. Not for clinical diagnosis.
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="card primary-card">
+          <div class="card-header">
+            <h2>Symptom Analyzer</h2>
+            <span class="dsa-tag">Set Intersection O(1)</span>
+          </div>
+          <p class="instruction">Tap the symptoms you are experiencing:</p>
+
+          <div class="symptom-pills" id="symptomsGrid"></div>
+
+          <button id="analyzeBtn" class="glow-btn">Run Analysis</button>
+
+          <div id="resultsArea" class="result-box hidden"></div>
+        </section>
+
+        <section class="card secondary-card">
+          <div class="card-header">
+            <h2>Disease Database</h2>
+            <span class="dsa-tag">Linear Search O(N)</span>
+          </div>
+          <p class="instruction">Lookup a disease to see its symptoms:</p>
+
+          <div class="search-bar">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="e.g. Malaria, Asthma..."
+            />
+            <button id="searchBtn" class="search-btn">🔍</button>
+          </div>
+
+          <div id="searchResultArea" class="result-box hidden"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
